@@ -867,6 +867,7 @@
 	"tags": "Etichete",
 	"addTag": "Adăugați etichetă",
 	"tagsHelpText": "Etichetele sunt folosite pentru a clasifica și filtra articolele. Puteți adăuga etichete în secțiunea Extra",
+	"youCanSetPasswordHere": "Puteți seta parola dvs. aici.",
 	"forgotPassword": "Aţi uitat parola",
 	"score": "Scor",
 	"mappingInferenceHelpText": "Aceste variabile sunt fixe și nu se vor modifica în funcție de sursă.",
@@ -904,6 +905,5 @@
 	"statusChanged": "Stare schimbată",
 	"cannotDeleteAutoTimeline": "Intrările cronologiei automate nu pot fi șterse",
 	"author": "Autor",
-	"timestampCannotBeInTheFuture": "Marcă de timp nu poate fi în viitor",
-	"youCanSetPasswordHere": "Puteți seta parola dvs. aici."
+	"timestampCannotBeInTheFuture": "Marcă de timp nu poate fi în viitor"
 }

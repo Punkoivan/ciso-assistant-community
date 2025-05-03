@@ -866,6 +866,7 @@
 	"tags": "العلامات",
 	"addTag": "إضافة علامة",
 	"tagsHelpText": "تُستخدم العلامات لتصنيف العناصر وتصفيتها. يمكنك إضافة علامات في قسم \"إضافي\"",
+	"youCanSetPasswordHere": "يمكنك تعيين كلمة المرور هنا",
 	"forgotPassword": "هل نسيت كلمة السر",
 	"score": "نتيجة",
 	"mappingInferenceHelpText": "هذه المتغيرات ثابتة ولن تتغير اعتمادًا على المصدر.",
@@ -879,6 +880,5 @@
 	"findings": "ملاحظات",
 	"associatedFindings": "الملاحظات المرتبطة",
 	"findings_count": "عدد الملاحظات",
-	"addFinding": "إضافة ملاحظة",
-	"youCanSetPasswordHere": "يمكنك تعيين كلمة المرور هنا"
+	"addFinding": "إضافة ملاحظة"
 }

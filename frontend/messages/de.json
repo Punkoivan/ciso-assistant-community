@@ -870,6 +870,7 @@
 	"tags": "Schlagwörter",
 	"addTag": "Tag hinzufügen",
 	"tagsHelpText": "Tags werden zum Kategorisieren und Filtern der Elemente verwendet. Sie können Tags im Abschnitt Extra hinzufügen",
+	"youCanSetPasswordHere": "Sie können hier Ihr Passwort festlegen.",
 	"forgotPassword": "Passwort vergessen",
 	"score": "Punktzahl",
 	"mappingInferenceHelpText": "Diese Variablen sind fest und ändern sich je nach Quelle nicht.",
@@ -912,6 +913,5 @@
 	"statusChanged": "Status geändert",
 	"cannotDeleteAutoTimeline": "Automatische Zeitleisten-Einträge können nicht gelöscht werden",
 	"author": "Autor",
-	"timestampCannotBeInTheFuture": "Der Zeitstempel darf nicht in der Zukunft liegen",
-	"youCanSetPasswordHere": "Sie können hier Ihr Passwort festlegen."
+	"timestampCannotBeInTheFuture": "Der Zeitstempel darf nicht in der Zukunft liegen"
 }

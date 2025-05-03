@@ -895,6 +895,7 @@
 	"days": "Hari",
 	"milliseconds": "Milidetik",
 	"existingMeasures": "Kontrol yang ada",
+	"youCanSetPasswordHere": "Anda dapat mengatur kata sandi di sini.",
 	"forgotPassword": "Lupa kata sandi",
 	"score": "Skor",
 	"mappingInferenceHelpText": "Variabel-variabel ini tetap dan tidak akan berubah tergantung pada sumber.",
@@ -1096,6 +1097,5 @@
 	"addFinding": "Tambahkan temuan",
 	"selectEvidence": "Pilih bukti",
 	"timestampCannotBeInTheFuture": "Timestamp tidak boleh di masa depan",
-	"youCanSetPasswordHere": "Anda dapat mengatur kata sandi di sini.",
 	"riskAcceptanceReviewMessage": "Penerimaan risiko ini menunggu untuk diproses. Ingat untuk meninjau sebelum memvalidasi atau menolak, karena Anda tidak dapat kembali."
 }

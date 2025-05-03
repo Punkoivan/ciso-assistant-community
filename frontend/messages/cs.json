@@ -863,6 +863,7 @@
 	"tags": "Štítky",
 	"addTag": "Přidat štítek",
 	"tagsHelpText": "Štítky pomáhají kategorizovat a filtrovat více objektů. Můžete je spravovat v menu Extra.",
+	"youCanSetPasswordHere": "Zde si můžete nastavit heslo.",
 	"score": "Skóre",
 	"bringTheEvidences": "Přineste důkazy",
 	"bringTheEvidencesHelpText": "Pokud je zakázáno, objekt bude duplikován bez jeho důkazů",
@@ -895,6 +896,5 @@
 	"statusChanged": "Stav změněn",
 	"cannotDeleteAutoTimeline": "Automatické záznamy časové osy nelze smazat",
 	"author": "Autor",
-	"timestampCannotBeInTheFuture": "Časové razítko nemůže být v budoucnosti",
-	"youCanSetPasswordHere": "Zde si můžete nastavit heslo."
+	"timestampCannotBeInTheFuture": "Časové razítko nemůže být v budoucnosti"
 }

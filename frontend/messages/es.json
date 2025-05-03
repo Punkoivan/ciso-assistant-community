@@ -870,6 +870,7 @@
 	"tags": "Etiquetas",
 	"addTag": "Agregar etiqueta",
 	"tagsHelpText": "Las etiquetas se utilizan para categorizar y filtrar los elementos. Puedes agregar etiquetas en la sección Extra",
+	"youCanSetPasswordHere": "Puede establecer su contraseña aquí.",
 	"forgotPassword": "Has olvidado tu contraseña",
 	"score": "Puntaje",
 	"mappingInferenceHelpText": "Estas variables son fijas y no cambiarán dependiendo de la fuente.",
@@ -912,6 +913,5 @@
 	"statusChanged": "Estado cambiado",
 	"cannotDeleteAutoTimeline": "No se pueden eliminar las entradas de cronología automáticas",
 	"author": "Autor",
-	"timestampCannotBeInTheFuture": "La marca de tiempo no puede ser en el futuro",
-	"youCanSetPasswordHere": "Puede establecer su contraseña aquí."
+	"timestampCannotBeInTheFuture": "La marca de tiempo no puede ser en el futuro"
 }

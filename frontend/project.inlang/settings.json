@@ -1,48 +1,49 @@
 {
-	"$schema": "https://inlang.com/schema/project-settings",
-	"baseLocale": "en",
-	"sourceLanguageTag": "en",
-	"locales": [
-		"en",
-		"fr",
-		"ar",
-		"pt",
-		"es",
-		"de",
-		"nl",
-		"it",
-		"pl",
-		"ro",
-		"hi",
-		"ur",
-		"cs",
-		"sv",
-		"id",
-		"da"
-	],
-	"languageTags": [
-		"en",
-		"fr",
-		"ar",
-		"pt",
-		"es",
-		"de",
-		"nl",
-		"it",
-		"pl",
-		"ro",
-		"hi",
-		"ur",
-		"cs",
-		"sv",
-		"id",
-		"da"
-	],
-	"modules": [
-		"https://cdn.jsdelivr.net/npm/@inlang/plugin-message-format@4/dist/index.js",
-		"https://cdn.jsdelivr.net/npm/@inlang/plugin-m-function-matcher@2/dist/index.js"
-	],
-	"plugin.inlang.messageFormat": {
-		"pathPattern": "./messages/{languageTag}.json"
-	}
+  "$schema": "https://inlang.com/schema/project-settings",
+  "baseLocale": "en",
+  "sourceLanguageTag": "en",
+  "locales": [
+    "en",
+    "fr",
+    "ar",
+    "pt",
+    "es",
+    "de",
+    "nl",
+    "it",
+    "pl",
+    "ro",
+    "hi",
+    "ur",
+    "cs",
+    "sv",
+    "id",
+    "da"
+  ],
+  "languageTags": [
+    "en",
+    "ar",
+    "cs",
+    "da",
+    "de",
+    "es",
+    "fr",
+    "hi",
+    "id",
+    "it",
+    "nl",
+    "pl",
+    "pt",
+    "ro",
+    "sv",
+    "uk",
+    "ur"
+  ],
+  "modules": [
+    "https://cdn.jsdelivr.net/npm/@inlang/plugin-message-format@4/dist/index.js",
+    "https://cdn.jsdelivr.net/npm/@inlang/plugin-m-function-matcher@2/dist/index.js"
+  ],
+  "plugin.inlang.messageFormat": {
+    "pathPattern": "./messages/{languageTag}.json"
+  }
 }

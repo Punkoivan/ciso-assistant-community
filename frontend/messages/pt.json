@@ -867,6 +867,7 @@
 	"tags": "Etiquetas",
 	"addTag": "Adicionar etiqueta",
 	"tagsHelpText": "As tags são usadas para categorizar e filtrar os itens. Você pode adicionar tags na seção Extra",
+	"youCanSetPasswordHere": "Você pode definir sua senha aqui.",
 	"forgotPassword": "Esqueceu sua senha",
 	"score": "Pontuação",
 	"mappingInferenceHelpText": "Essas variáveis são fixas e não mudarão dependendo da fonte.",
@@ -904,6 +905,5 @@
 	"statusChanged": "Status alterado",
 	"cannotDeleteAutoTimeline": "As entradas automáticas da linha do tempo não podem ser excluídas",
 	"author": "Autor",
-	"timestampCannotBeInTheFuture": "O carimbo de data/hora não pode estar no futuro",
-	"youCanSetPasswordHere": "Você pode definir sua senha aqui."
+	"timestampCannotBeInTheFuture": "O carimbo de data/hora não pode estar no futuro"
 }

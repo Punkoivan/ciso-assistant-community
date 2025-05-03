@@ -867,6 +867,7 @@
 	"tags": "Tagi",
 	"addTag": "Dodaj tag",
 	"tagsHelpText": "Tagi służą do kategoryzowania i filtrowania elementów. Możesz dodać tagi w sekcji Extra",
+	"youCanSetPasswordHere": "Możesz ustawić swoje hasło tutaj.",
 	"forgotPassword": "Zapomniałem hasła",
 	"score": "Wynik",
 	"mappingInferenceHelpText": "Te zmienne są stałe i nie zmieniają się w zależności od źródła.",
@@ -905,6 +906,5 @@
 	"cannotDeleteAutoTimeline": "Nie można usunąć automatycznych wpisów osi czasu",
 	"author": "Autor",
 	"timestampCannotBeInTheFuture": "Znacznik czasu nie może być w przyszłości",
-	"youCanSetPasswordHere": "Możesz ustawić swoje hasło tutaj.",
 	"filterby": "Filtruj według"
 }
