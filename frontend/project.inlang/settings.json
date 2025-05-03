@@ -41,10 +41,12 @@
     "uk",
     "ur"
   ],
-  "modules": [
-    "https://cdn.jsdelivr.net/npm/@inlang/plugin-json@latest/dist/index.js"
-  ],
-	"plugin.inlang.json": {
-    "pathPattern": "./frontend/messages/{locale}.json"
-  }
+	"modules": [
+		"https://cdn.jsdelivr.net/npm/@inlang/plugin-message-format@4/dist/index.js",
+		"https://cdn.jsdelivr.net/npm/@inlang/plugin-m-function-matcher@2/dist/index.js"
+	],
+	"plugin.inlang.messageFormat": {
+		"pathPattern": "./messages/{locale}.json"
+		"pathPattern": "./messages/{languageTag}.json"
+	}
 }
