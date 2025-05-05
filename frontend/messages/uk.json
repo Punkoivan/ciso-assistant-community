@@ -353,5 +353,15 @@
 	"privacyViolationChoice2": "Сотні людей",
 	"privacyViolationChoice3": "Тисячі людей",
 	"privacyViolationChoice4": "Мільйони людей",
-	"lossOfConfidentialityText": "Скільки даних може бути розкрито та наскільки вони чутливі?"
+	"lossOfConfidentialityText": "Скільки даних може бути розкрито та наскільки вони чутливі?",
+	"lossOfConfidentialityChoice1": "Мінімальна кількість розкритих нечутливих даних",
+	"lossOfConfidentialityChoice2": "Розкриття мінімальної кількість критичних або великої кількості нечутливих даних",
+	"lossOfConfidentialityChoice3": "Розкрито суттєву кількість критично важливих даних",
+	"lossOfConfidentialityChoice4": "Усі дані розкрито",
+	"lossOfIntegrityText": "Скільки та як сейрозно може бути пошкоджено дані?",
+	"lossOfIntegrityChoice1": "Мінімальна кількість злегка пошкоджених даних",
+	"lossOfIntegrityChoice2": "Мінімальна кількість серйозно пошкоджених даних",
+	"lossOfIntegrityChoice3": "Велика кіьлкість злегка пошкоджені дані",
+	"lossOfIntegrityChoice4": "Багато серйозно пошкоджених даних",
+	"lossOfIntegrityChoice5": "Всі дані повністю пошкоджені"
 }
