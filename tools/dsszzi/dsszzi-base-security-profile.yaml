@@ -1,0 +1,1393 @@
+convert_library_version: 'v2 ; Compat Mode: [0] {[v2.1] (DEFAULT) Don''t use any Compatibility Mode}'
+urn: urn:intuitem:risk:library:dsszzi-base-security-profile
+locale: uk
+ref_id: DSSZZI-BSP
+name: ДССЗЗІ – Базовий профіль безпеки
+description: 'Базовий профіль безпеки системи на основі положень НД ТЗІ 3.6-006-24,
+
+  побудований на каталозі заходів захисту NIST SP 800-53.
+
+  Об''єднує вимоги для систем, де обробляється відкрита/конфіденційна
+
+  інформація, та систем, де обробляється службова інформація (ДСК),
+
+  через implementation groups.'
+copyright: Адміністрація Державної служби спеціального зв'язку та захисту інформації України
+version: 2
+publication_date: '2026-07-10'
+provider: ДССЗЗІ
+packager: ciso-assistant-ua
+objects:
+  framework:
+    urn: urn:intuitem:risk:framework:dsszzi-base-security-profile
+    ref_id: DSSZZI-BSP
+    name: ДССЗЗІ – Базовий профіль безпеки
+    description: 'Базовий профіль безпеки системи на основі положень НД ТЗІ 3.6-006-24,
+
+      побудований на каталозі заходів захисту NIST SP 800-53.
+
+      Об''єднує вимоги для систем, де обробляється відкрита/конфіденційна
+
+      інформація, та систем, де обробляється службова інформація (ДСК),
+
+      через implementation groups.'
+    implementation_groups_definition:
+    - ref_id: VK
+      name: Відкрита/конфіденційна інформація
+      description: Базовий профіль для систем, де обробляється відкрита або конфіденційна інформація (НД ТЗІ 3.6-006-24).
+    - ref_id: DSK
+      name: Службова інформація (ДСК)
+      description: Профіль для систем, де обробляється інформація для службового користування (ДСК); включає всі
+        вимоги профілю VK плюс додаткові/посилені вимоги.
+    requirement_nodes:
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ac
+      assessable: false
+      depth: 1
+      ref_id: AC
+      name: Управління доступом
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:1
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ac
+      ref_id: '1'
+      name: Управління обліковими записами
+      description: '1) Визначити дозволені та заборонені типи облікових записів у системі; 2) створювати, активувати,
+        змінювати, деактивувати та видаляти облікові записи із системи відповідно до політики, процедур, передумов
+        і критеріїв організації; 3) визначити авторизованих користувачів системи, належність до груп і ролей, а
+        також повноваження доступу (тобто привілеї); 4) авторизувати доступ до системи на основі чинного дозволу
+        та цілей використання системи; 5) контролювати використання облікових записів у системі; 6) оповістити персонал
+        або ролі організації, коли: облікові записи більше не потрібні; користувачі звільняються або переводяться;
+        у системі наявні зміни, які потребують нових знань; 8) вимагати, щоб користувачі виходили з системи після
+        очікуваної бездіяльності або за визначеними обставинами.'
+      annotation: 'AC-2, AC-2(5). Мінімальні параметри: h.1. 24 години; h.2. 24 години; h.3. 24 години; j. мінімум
+        щоквартально; AC-2(5) — кінець робочого дня користувача'
+      implementation_groups:
+      - VK
+      - DSK
+      questions:
+        urn:intuitem:risk:req_node:dsszzi-base-security-profile:1:question:1:
+          type: text
+          text: 'AC-2 — Призначення: визначеною організацією відповідальною особою або роллю — вкажіть значення'
+        urn:intuitem:risk:req_node:dsszzi-base-security-profile:1:question:2:
+          type: text
+          text: 'AC-2 — Призначення: визначених організацією політики, процедур та умов — вкажіть значення'
+        urn:intuitem:risk:req_node:dsszzi-base-security-profile:1:question:3:
+          type: text
+          text: 'AC-2 — Призначення: визначеного організацією часового періоду для кожної ситуації — вкажіть значення'
+        urn:intuitem:risk:req_node:dsszzi-base-security-profile:1:question:4:
+          type: text
+          text: 'AC-2 — Призначення: визначеною організацією частотою — вкажіть значення'
+        urn:intuitem:risk:req_node:dsszzi-base-security-profile:1:question:5:
+          type: text
+          text: 'AC-2(5) — Призначення: вичерпано визначений організацією періоду часу очікування або опис того,
+            коли необхідно вийти із системи — вкажіть значення'
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:2
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ac
+      ref_id: '2'
+      name: Забезпечення доступу
+      description: Застосовувати затверджені повноваження для логічного доступу до конфіденційної інформації та
+        ресурсів у системі.
+      annotation: AC-3
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:3
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ac
+      ref_id: '3'
+      name: Управління інформаційними потоками
+      description: Застосовувати затверджені дії для управління потоками відкритої та конфіденційної інформації
+        всередині системи та між підключеними системами.
+      annotation: AC-4
+      implementation_groups:
+      - VK
+      - DSK
+      questions:
+        urn:intuitem:risk:req_node:dsszzi-base-security-profile:3:question:1:
+          type: text
+          text: 'AC-4 — Призначення: визначеними організацією політиками управління інформаційним потоком — вкажіть
+            значення'
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:4
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ac
+      ref_id: '4'
+      name: Розмежування обов'язків
+      description: Визначити обов'язки осіб, які потребують розмежування; установити правила авторизації доступу
+        для підтримки розмежування обов'язків.
+      annotation: AC-5
+      implementation_groups:
+      - VK
+      - DSK
+      questions:
+        urn:intuitem:risk:req_node:dsszzi-base-security-profile:4:question:1:
+          type: text
+          text: 'AC-5 — Призначення: визначені організацією обов’язки окремих осіб — вкажіть значення'
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:5
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ac
+      ref_id: '5'
+      name: Мінімізація повноважень
+      description: Надавати користувачам (або процесам, що діють від імені користувачів) лише авторизований доступ
+        до системи, необхідний для виконання поставлених завдань організації; авторизувати доступ до функцій безпеки,
+        визначених організацією та важливих для безпеки інформації.
+      annotation: AC-6, AC-6(1), AU-9(4)
+      implementation_groups:
+      - VK
+      - DSK
+      questions:
+        urn:intuitem:risk:req_node:dsszzi-base-security-profile:5:question:1:
+          type: text
+          text: 'AC-6(1) — Призначення: особи або ролі, визначені організацією — вкажіть значення'
+        urn:intuitem:risk:req_node:dsszzi-base-security-profile:5:question:2:
+          type: text
+          text: 'AC-6(1) — Призначення: функції безпеки, визначені організацією (розгорнуті в апаратному, програмному
+            та мікропрограмному забезпеченні) — вкажіть значення'
+        urn:intuitem:risk:req_node:dsszzi-base-security-profile:5:question:3:
+          type: text
+          text: 'AC-6(1) — Призначення: визначена організацією інформація, необхідна для забезпечення безпеки —
+            вкажіть значення'
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:6
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ac
+      ref_id: '6'
+      name: Мінімізація повноважень – непривілейований доступ до незахищених функцій
+      description: Обмежити привілейовані облікові записи в системі для персоналу або ролей, що визначаються організацією;
+        вимагати, щоб користувачі (або ролі) з привілейованими обліковими записами використовували непривілейовані
+        облікові записи для доступу до незахищених функцій або інформації.
+      annotation: 'AC-6(2), AC-6(5). Мінімальні параметри: привілейовані функції'
+      implementation_groups:
+      - VK
+      - DSK
+      questions:
+        urn:intuitem:risk:req_node:dsszzi-base-security-profile:6:question:1:
+          type: text
+          text: 'AC-6(2) — Призначення: визначених організацією функцій безпеки або інформації, що стосується безпеки
+            — вкажіть значення'
+        urn:intuitem:risk:req_node:dsszzi-base-security-profile:6:question:2:
+          type: text
+          text: 'AC-6(5) — Призначення: визначеним організацією персоналом або ролями — вкажіть значення'
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:7
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ac
+      ref_id: '7'
+      name: Мінімізація повноважень – заборона непривілейованим користувачам виконувати привілейовані функції
+      description: Заборонити непривілейованим користувачам виконувати привілейовані функції.
+      annotation: AC-6(10)
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:8
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ac
+      ref_id: '8'
+      name: Невдалі спроби входу в систему
+      description: 'Встановити обмеження на кількість (визначену організацією) невдалих спроб входу в систему протягом
+        визначеного проміжку часу; автоматично (вибір один або декілька): заблокувати обліковий запис або вузол
+        на визначений період; заблокувати обліковий запис або вузол до зняття адміністратором; відкласти наступний
+        запит на вхід; повідомити системного адміністратора; вжити інших заходів, коли перевищено максимальну кількість
+        невдалих спроб входу в систему.'
+      annotation: 'AC-7. Мінімальні параметри: b. повідомити відповідального адміністратора'
+      implementation_groups:
+      - VK
+      - DSK
+      questions:
+        urn:intuitem:risk:req_node:dsszzi-base-security-profile:8:question:1:
+          type: text
+          text: 'AC-7 — Призначення: визначену організацією кількість — вкажіть значення'
+        urn:intuitem:risk:req_node:dsszzi-base-security-profile:8:question:2:
+          type: text
+          text: 'AC-7 — Призначення: визначеного організацією часового періоду — вкажіть значення'
+        urn:intuitem:risk:req_node:dsszzi-base-security-profile:8:question:3:
+          type: multiple_choice
+          text: 'AC-7 — Вибір (один або декілька): оберіть значення'
+          choices:
+          - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:8:question:3:choice:1
+            value: 'блокування облікового запису/вузла на [Призначення: визначений організацією часовий період]'
+          - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:8:question:3:choice:2
+            value: блокування облікового запису/вузла, доки він не буде розблокований адміністратором
+          - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:8:question:3:choice:3
+            value: 'затримання наступної команди входу в систему за [Надання: визначеним організацією алгоритмом
+              затримки]'
+          - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:8:question:3:choice:4
+            value: 'виконати [Призначення: визначені організацією дії]'
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:9
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ac
+      ref_id: '9'
+      name: Попередження про використання системи
+      description: Відображати повідомлення в системі з попередженнями про конфіденційність і безпеку відповідно
+        до застосовних правил керівних документів для відкритої та конфіденційної інформації перед тим, як надати
+        доступ до системи.
+      annotation: AC-8
+      implementation_groups:
+      - VK
+      - DSK
+      questions:
+        urn:intuitem:risk:req_node:dsszzi-base-security-profile:9:question:1:
+          type: text
+          text: 'AC-8 — Призначення: визначене організацією сповіщення або банер про використання системи — вкажіть
+            значення'
+        urn:intuitem:risk:req_node:dsszzi-base-security-profile:9:question:2:
+          type: text
+          text: 'AC-8 — Призначення: визначені організацією умови — вкажіть значення'
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:10
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ac
+      ref_id: '10'
+      name: Блокування пристрою
+      description: 'Заборонити доступ до системи за допомогою дій (вибір один або декілька): ініціювання блокування
+        пристрою після визначеного періоду часу бездіяльності; вимагати від користувача ініціювати блокування пристрою
+        перед тим, як залишити систему без нагляду; зберігати блокування пристрою до відновлення доступу користувача
+        за допомогою встановлених процедур ідентифікації та автентифікації; приховати за допомогою блокування пристрою
+        інформацію, яку раніше було видно на дисплеї, за допомогою публічно доступного зображення.'
+      annotation: 'AC-11, AC-11(1). Мінімальні параметри: a. ініціювання блокування пристрою через період, що не
+        перевищує 30 хвилин; дія користувача ініціювати блокування пристрою перед тим, як залишити систему без нагляду'
+      implementation_groups:
+      - VK
+      - DSK
+      questions:
+        urn:intuitem:risk:req_node:dsszzi-base-security-profile:10:question:1:
+          type: text
+          text: 'AC-11 — Призначення: визначеного організацією періоду — вкажіть значення'
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:11
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ac
+      ref_id: '11'
+      name: Припинення сеансу
+      description: Автоматично завершувати сеанс користувача після умов або подій, що вимагають відключення сеансу,
+        визначених організацією.
+      annotation: AC-12
+      implementation_groups:
+      - VK
+      - DSK
+      questions:
+        urn:intuitem:risk:req_node:dsszzi-base-security-profile:11:question:1:
+          type: text
+          text: 'AC-12 — Призначення: визначених організацією умов або тригерних подій, що вимагають припинення
+            сеансу — вкажіть значення'
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:12
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ac
+      ref_id: '12'
+      name: Віддалений доступ
+      description: Встановити обмеження на використання, дії до конфігурації та підключення для кожного типу допустимого
+        віддаленого доступу до системи; авторизувати кожен тип віддаленого доступу до системи перед встановленням
+        таких з'єднань; виконувати маршрутизацію всього віддаленого доступу до системи через авторизовані та керовані
+        точки контролю управління доступом до мережі; авторизувати віддалене виконання привілейованих команд і віддалений
+        доступ до інформації, важливої для безпеки.
+      annotation: AC-17, AC-17(3), AC-17(4)
+      implementation_groups:
+      - VK
+      - DSK
+      questions:
+        urn:intuitem:risk:req_node:dsszzi-base-security-profile:12:question:1:
+          type: text
+          text: 'AC-17(4) — Призначення: визначених організацією потреб — вкажіть значення'
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:13
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ac
+      ref_id: '13'
+      name: Бездротовий доступ
+      description: Встановити обмеження на використання, дії до конфігурації та підключення для кожного типу бездротового
+        доступу до системи; авторизувати бездротовий доступ до системи, перш ніж будуть дозволені такі підключення.
+      annotation: AC-18
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:14
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ac
+      ref_id: '14'
+      name: Контроль доступу для мобільних пристроїв
+      description: Встановити обмеження на використання, дії до конфігурації та підключення для мобільних пристроїв;
+        авторизувати підключення мобільних пристроїв до системи; застосувати повне шифрування носія інформації пристрою
+        або шифрування на основі шифрування сховищ інформації (контейнерів).
+      annotation: 'AC-19, AC-19(5). Мінімальні параметри: усі мобільні комп''ютери/пристрої, які обробляють дані
+        організації'
+      implementation_groups:
+      - VK
+      - DSK
+      questions:
+        urn:intuitem:risk:req_node:dsszzi-base-security-profile:14:question:1:
+          type: unique_choice
+          text: 'AC-19(5) — Вибір: оберіть значення'
+          choices:
+          - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:14:question:1:choice:1
+            value: повне шифрування пристроїв
+          - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:14:question:1:choice:2
+            value: шифрування сховищ інформації
+        urn:intuitem:risk:req_node:dsszzi-base-security-profile:14:question:2:
+          type: text
+          text: 'AC-19(5) — Призначення: визначених організацією мобільних пристроях — вкажіть значення'
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:15
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ac
+      ref_id: '15'
+      name: Використання зовнішніх систем
+      description: '1) Заборонити використання зовнішніх систем, крім систем дозволених організацією; 2) установити
+        такі положення, умови та дії щодо безпеки, які повинні бути виконані у зовнішніх системах, перш ніж дозволити
+        використання або доступ до цих систем авторизованим особам; 3) дозволити авторизованим особам використовувати
+        зовнішню систему для доступу до системи організації або для обробки, зберігання чи передачі відкритої та
+        конфіденційної інформації, лише після: перевірки реалізації дій безпеки на зовнішній системі, як зазначено
+        в планах безпеки організації; збереження затверджених угод про підключення або обробку даних з організацією,
+        що розміщує зовнішню систему, з якою укладено відповідну угоду; 4) обмежити використання портативних пристроїв
+        зберігання даних авторизованими особами на зовнішніх системах.'
+      annotation: AC-20, AC-20(1), AC-20(2)
+      implementation_groups:
+      - VK
+      - DSK
+      questions:
+        urn:intuitem:risk:req_node:dsszzi-base-security-profile:15:question:1:
+          type: multiple_choice
+          text: 'AC-20 — Вибір (один або кілька): оберіть значення'
+          choices:
+          - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:15:question:1:choice:1
+            value: 'Встановіть [Призначення: умови, визначені організацією]'
+          - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:15:question:1:choice:2
+            value: 'Визначте [Призначення: визначені організацією засоби контролю, які, як стверджується, будуть
+              реалізовані на зовнішніх системах]'
+        urn:intuitem:risk:req_node:dsszzi-base-security-profile:15:question:2:
+          type: text
+          text: 'AC-20 — Призначення: організаційно-визначені типи зовнішніх систем — вкажіть значення'
+        urn:intuitem:risk:req_node:dsszzi-base-security-profile:15:question:3:
+          type: text
+          text: 'AC-20(2) — Призначення: обмеження, визначені організацією — вкажіть значення'
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:16
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ac
+      ref_id: '16'
+      name: Публічно доступний контент
+      description: Навчати авторизованих осіб щодо нерозголошення відкритої та конфіденційної інформації в загальнодоступних
+        системах; періодично переглядати вміст загальнодоступних систем на предмет наявності відкритої та конфіденційної
+        інформації та видаляти таку інформацію, якщо її виявлено.
+      annotation: 'AC-22. Мінімальні параметри: d. щоквартально або в міру надходження нової інформації'
+      implementation_groups:
+      - VK
+      - DSK
+      questions:
+        urn:intuitem:risk:req_node:dsszzi-base-security-profile:16:question:1:
+          type: text
+          text: 'AC-22 — Призначення: визначеною організацією частотою — вкажіть значення'
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:at
+      assessable: false
+      depth: 1
+      ref_id: AT
+      name: Обізнаність та навчання
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:17
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:at
+      ref_id: '17'
+      name: Навчання з підвищення обізнаності
+      description: '1) Забезпечити навчання користувачів системи з питань безпеки: як частину початкового навчання
+        для нових користувачів і періодично після цього; якщо цього потребують зміни в системі або наступні події,
+        визначені організацією; щодо розпізнавання та повідомлення про індикатори внутрішньої загрози, соціальної
+        інженерії, та соціального шпіонажу; 2) оновлювати зміст тренінгу з безпекової обізнаності з визначеною організацією
+        періодичністю та після визначених організацією подій.'
+      annotation: 'AT-2, AT-2(2). Мінімальні параметри: a.1. щонайменше раз на рік'
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:18
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:at
+      ref_id: '18'
+      name: Рольове навчання
+      description: 1) Провести тренінги з безпеки для персоналу організації на основі покладених обов'язків перед
+        авторизацією доступу до системи або відкритої та конфіденційної інформації, перед виконанням призначених
+        обов'язків, а також з частотою, визначеною організацією, після цього; коли цього вимагають зміни в системі
+        або визначені організацією події; 2) оновлювати зміст тренінгів з визначеною організацією частотою та після
+        визначених організацією подій.
+      annotation: 'AT-3. Мінімальні параметри: a.1. щонайменше щороку'
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:au
+      assessable: false
+      depth: 1
+      ref_id: AU
+      name: Аудит та підзвітність
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:19
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:au
+      ref_id: '19'
+      name: Події аудиту
+      description: Визначити перелік подій, які реєструються в системі (типи подій, визначені організацією); переглядати
+        та оновлювати з визначеною організацією частотою типи подій, обрані для реєстрації.
+      annotation: AU-2
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:20
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:au
+      ref_id: '20'
+      name: Зміст записів аудиту
+      description: '1) Записи аудиту повинні містити таку інформацію: який тип події стався; коли відбулася подія;
+        де відбулася подія; джерело події; наслідки події; результат події та ідентифікатор будь-яких осіб або суб''єктів,
+        пов''язаних з подією; 2) за потреби надавати додаткову інформацію для записів аудиту.'
+      annotation: AU-3, AU-3(1)
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:21
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:au
+      ref_id: '21'
+      name: Збереження записів аудиту
+      description: Згенерувати записи аудиту для вибраних типів подій згідно з вмістом записів аудиту, вказаних
+        у п. 20; зберігати записи аудиту протягом періоду часу, який відповідає політиці зберігання записів аудиту.
+      annotation: 'AU-11, AU-12. Мінімальні параметри: усі інформаційні системи та мережеві компоненти'
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:22
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:au
+      ref_id: '22'
+      name: Реагування на відмови обробки даних аудиту
+      description: Сповіщати персонал або ролі організації в межах визначеного організацією періоду часу у разі
+        збою обробки даних аудиту; виконати додаткові дії, визначені організацією.
+      annotation: 'AU-5. Мінімальні параметри: майже в реальному часі'
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:23
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:au
+      ref_id: '23'
+      name: Огляд, аналіз і звітність аудиту
+      description: Переглядати та аналізувати з визначеною організацією частотою записи аудиту системи на предмет
+        виявлення ознак і потенційного впливу не властивої або незвичної діяльності; повідомляти про результати
+        аудиту співробітникам організації або ролям; аналізувати та зіставляти записи аудиту в різних сховищах задля
+        забезпечення ситуативної обізнаності в масштабах організації.
+      annotation: 'AU-6, AU-6(3). Мінімальні параметри: щонайменше щотижня (сім днів)'
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:24
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:au
+      ref_id: '24'
+      name: Скорочення записів аудиту та формування звіту
+      description: Впровадити функцію скорочення записів аудиту і створення звітів, яка підтримує перегляд записів
+        аудиту, аналіз, дії до звітності та постфактум розслідування інцидентів; зберігати оригінальний зміст і
+        часовий порядок записів аудиту.
+      annotation: AU-7
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:25
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:au
+      ref_id: '25'
+      name: Позначка часу
+      description: 'Використовувати внутрішній годинник у системі для створення позначок часу для записів аудиту;
+        застосовувати позначки часу, які відповідають визначеній організацією деталізації вимірювання часу і використовують:
+        всесвітній координований час (UTC); фіксоване зміщення місцевого часу відносно UTC або зміщення місцевого
+        часу як частину позначки часу.'
+      annotation: AU-8
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:26
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:au
+      ref_id: '26'
+      name: Захист інформації аудиту
+      description: Захистити інформацію аудиту та інструментів журналювання аудиту від несанкціонованого доступу,
+        зміни та видалення; надавати доступ до управління функціями аудиту тільки підмножині привілейованих користувачів
+        або ролей.
+      annotation: AU-9, AU-9(4)
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:cm
+      assessable: false
+      depth: 1
+      ref_id: CM
+      name: Управління конфігурацією
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:27
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:cm
+      ref_id: '27'
+      name: Базова конфігурація
+      description: Розробляти та підтримувати під контролем налаштування поточної базової конфігурації системи;
+        переглядати та оновлювати з визначеною організацією частотою базову конфігурацію системи, а також при встановленні
+        або модифікації компонентів системи.
+      annotation: 'CM-2. Мінімальні параметри: щонайменше щороку'
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:28
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:cm
+      ref_id: '28'
+      name: Налаштування конфігурації
+      description: Встановити, задокументувати та впровадити параметри конфігурації системи, які відображають найбільш
+        обмежувальний режим, що відповідає експлуатаційним діям; визначити, задокументувати та затвердити будь-які
+        відхилення від встановлених налаштувань конфігурації.
+      annotation: 'CM-6. Мінімальні параметри: c. усі конфігуровані компоненти системи'
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:29
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:cm
+      ref_id: '29'
+      name: Управління змінами конфігурації
+      description: Визначити типи змін у конфігурації системи, які необхідно контролювати; переглядати запропоновані
+        зміни в конфігурації системи, схвалювати або відхиляти такі зміни, враховуючи вплив на безпеку; упроваджувати
+        та задокументувати затверджені зміни конфігурації системи; відстежувати та переглядати дії, пов'язані зі
+        змінами в конфігурації системи, які необхідно контролювати.
+      annotation: 'CM-3. Мінімальні параметри: e. 1 рік'
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:30
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:cm
+      ref_id: '30'
+      name: Аналіз впливу на безпеку та приватність
+      description: Проаналізувати вплив змін у системі на безпеку перед їх впровадженням.
+      annotation: CM-4
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:31
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:cm
+      ref_id: '31'
+      name: Обмеження доступу до змін
+      description: Визначити, задокументувати, затвердити та впровадити фізичні та логічні обмеження доступу, пов'язані
+        зі змінами в системі.
+      annotation: CM-5
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:32
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:cm
+      ref_id: '32'
+      name: Мінімально необхідна функціональність
+      description: Налаштувати систему так, щоб вона надавала лише необхідні для виконання завдань функції; заборонити
+        або обмежити використання таких функцій, портів, протоколів, підключень і служб, визначених організацією;
+        переглядати з визначеною організацією частотою систему, щоб виявити непотрібні або небезпечні функції, порти,
+        протоколи, з'єднання та служби; вимкнути або видалити функції, порти, протоколи, з'єднання та служби, які
+        є непотрібними або небезпечними.
+      annotation: 'CM-7, CM-7(1). Мінімальні параметри: щонайменше раз на рік або в міру внесення змін до системи
+        чи виникнення інцидентів; b. усі функції, порти, протоколи, програмне забезпечення та послуги в системі,
+        визначені як непотрібні та/або незахищені'
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ia
+      assessable: false
+      depth: 1
+      ref_id: IA
+      name: Ідентифікація та автентифікація
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:33
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ia
+      ref_id: '33'
+      name: Ідентифікація та автентифікація (користувачів організації)
+      description: Унікально ідентифікувати та автентифікувати користувачів організації і пов'язувати цю унікальну
+        ідентифікацію з процесами, що діють від імені цих користувачів.
+      annotation: IA-2
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:34
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ia
+      ref_id: '34'
+      name: Ідентифікація та автентифікація пристроїв
+      description: Унікально ідентифікувати та автентифікувати пристрої перед встановленням з'єднання з системою.
+      annotation: IA-3
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:35
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ia
+      ref_id: '35'
+      name: Ідентифікація та автентифікація (користувачів організації) – Багатофакторна автентифікація привілейованих
+        облікових записів
+      description: Упровадити багатофакторну автентифікацію для доступу до облікових записів системи.
+      annotation: IA-2(1), IA-2(2)
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:36
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ia
+      ref_id: '36'
+      name: Ідентифікація та автентифікація (користувачів організації) – доступ до облікових записів – стійкість
+        до відтворення
+      description: Упровадити механізми автентифікації, стійкі до повторного відтворення, для доступу до облікових
+        записів у системі.
+      annotation: 'IA-2(8). Мінімальні параметри: як мінімум привілейовані облікові записи'
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:37
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ia
+      ref_id: '37'
+      name: Управління ідентифікацією
+      description: Отримати дозвіл від персоналу або ролей організації на призначення ідентифікатора особи, групи,
+        ролі, служби або пристрою; вибрати та призначити ідентифікатор, який ідентифікує особу, групу, роль, службу
+        або пристрій; запобігати повторному використанню ідентифікаторів для визначеного організацією періоду часу.
+      annotation: 'IA-4. Мінімальні параметри: d. щонайменше рік для окремих осіб, груп, ролей'
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:38
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ia
+      ref_id: '38'
+      name: Управління автентифікатором – автентифікація на основі пароля
+      description: Вести перелік часто використовуваних, очікуваних або скомпрометованих паролів і періодично оновлювати
+        його, а також у разі виникнення підозри, що паролі організації були скомпрометовані; перевіряти, коли користувачі
+        створюють або оновлюють паролі, чи не містяться вони у списку загальновживаних, очікуваних або скомпрометованих
+        паролів; передавати паролі тільки криптографічно захищеними каналами; зберігати паролі в криптографічно
+        захищеному вигляді; встановити новий пароль при першому використанні після відновлення облікового запису;
+        упровадити правила складу та складності паролів, визначені організацією.
+      annotation: 'IA-5(1). Мінімальні параметри: a. щонайменше щоквартально; h. 12-символьний набір з великих,
+        малих літер, цифр та спеціальних символів, що включає принаймні по одному символу кожного регістру; змінювати
+        принаймні 50% символів при створенні нових паролів'
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:39
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ia
+      ref_id: '39'
+      name: Зворотний зв'язок автентифікатора
+      description: Забезпечити прихований зворотний зв'язок автентифікаційної інформації під час процесу автентифікації.
+      annotation: IA-6
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:40
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ia
+      ref_id: '40'
+      name: Управління автентифікатором
+      description: Перевіряти ідентичність особи, групи, ролі, служби або пристрою, які отримують автентифікатор
+        під час початкового розповсюдження автентифікатора; встановити початковий вміст автентифікатора для всіх
+        автентифікаторів, виданих організацією; створити та впровадити адміністративні процедури для початкового
+        розподілу для втрачених, скомпрометованих або пошкоджених автентифікаторів, а також для відкликання автентифікаторів;
+        змінити автентифікатори за замовчуванням під час першого використання; змінювати або оновлювати автентифікатори
+        періодично або коли відбуваються визначені організацією події; захистити вміст автентифікатора від несанкціонованого
+        розкриття та модифікації.
+      annotation: 'IA-5. Мінімальні параметри: f. 1-ий параметр: не більше 180 днів для паролів'
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ir
+      assessable: false
+      depth: 1
+      ref_id: IR
+      name: Реагування на інциденти
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:41
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ir
+      ref_id: '41'
+      name: Обробка інциденту
+      description: Упровадити систему реагування на інциденти, яка відповідає плану реагування на інциденти і передбачає
+        підготовку, виявлення та аналіз, локалізацію, ліквідацію та відновлення інцидентів.
+      annotation: IR-4
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:42
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ir
+      ref_id: '42'
+      name: Моніторинг інциденту
+      description: Відстежувати та документувати інциденти, пов'язані з безпекою системи.
+      annotation: 'IR-5, IR-6. Мінімальні параметри: a. 2 години'
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:43
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ir
+      ref_id: '43'
+      name: Перевірка реагувань на інциденти
+      description: Перевіряти ефективність спроможності реагування на інциденти з визначеною організацією частотою.
+      annotation: 'IR-3. Мінімальні параметри: щонайменше щороку'
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:44
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ir
+      ref_id: '44'
+      name: Навчання з реагування на інциденти
+      description: '1) Проводити навчання з реагування на інциденти для користувачів системи відповідно до призначених
+        ролей та обов''язків: протягом визначеного організацією періоду часу з моменту прийняття на себе ролі чи
+        відповідальності за реагування на інцидент або отримання доступу до системи; коли цього вимагають зміни
+        в системі; з визначеною організацією частотою надалі; 2) переглядати та оновлювати зміст навчання з реагування
+        на інциденти з визначеною організацією періодичністю та після визначених організацією подій.'
+      annotation: 'IR-2. Мінімальні параметри: a.1. 30 робочих днів; a.3. щонайменше щороку; b. 1-ий параметр: щонайменше
+        щороку'
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:45
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ir
+      ref_id: '45'
+      name: План реагування на інциденти
+      description: '1) Розробити план реагування на інцидент, який: надає організації план дій для реалізації її
+        можливостей реагування на інциденти, описує структуру та організацію системи реагування на інциденти, забезпечує
+        високорівневий підхід до того, як спроможність реагування на інциденти вписується в загальну структуру організації,
+        визначає інциденти, про які необхідно повідомляти, вирішує питання обміну інформацією про інциденти, і розподіляє
+        обов''язки між структурними підрозділами, персоналом або ролями; 2) розповсюдити копії плану реагування
+        на інцидент серед призначеного персоналу, відповідального за реагування на інцидент, та організаційних елементів;
+        3) оновлювати план реагування на інциденти з урахуванням змін в системі та організації або проблем, що виникли
+        під час впровадження, виконання або тестування плану; 4) захистити план реагування на інциденти від несанкціонованого
+        розголошення.'
+      annotation: 'IR-8. Мінімальні параметри: b. весь персонал, який має роль або відповідальність за впровадження
+        плану реагування на інциденти; d. весь персонал, який має роль або відповідальність за впровадження плану
+        реагування на інциденти'
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ma
+      assessable: false
+      depth: 1
+      ref_id: MA
+      name: Технічне обслуговування
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:46
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ma
+      ref_id: '46'
+      name: Інструменти для обслуговування
+      description: Затверджувати, контролювати та відстежувати використання інструментів технічного обслуговування
+        системи; перевіряти інструменти для технічного обслуговування на наявність неналежних або несанкціонованих
+        модифікацій.
+      annotation: 'MA-3, MA-3(1), MA-3(2). Мінімальні параметри: b. щонайменше щороку'
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:47
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ma
+      ref_id: '47'
+      name: Віддалене обслуговування
+      description: Затверджувати та контролювати віддалені сеанси з технічного обслуговування та діагностики; упроваджувати
+        багатофакторну автентифікацію та стійкість до повторного відтворення при створенні віддалених сеансів технічного
+        обслуговування та діагностики; забезпечити завершення сеансу та мережевих з'єднань після завершення віддаленого
+        технічного обслуговування.
+      annotation: MA-4
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:48
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ma
+      ref_id: '48'
+      name: Технічний персонал
+      description: Встановити процес авторизації персоналу з технічного обслуговування; вести список уповноважених
+        організацій або персоналу з технічного обслуговування; переконатися, що персонал без супроводу, який виконує
+        технічне обслуговування системи, має необхідні дозволи на доступ; призначити персонал організації з необхідними
+        повноваженнями доступу та технічною компетентністю для нагляду за діяльністю персоналу з технічного обслуговування,
+        який не має необхідних повноважень доступу.
+      annotation: MA-5
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:mp
+      assessable: false
+      depth: 1
+      ref_id: MP
+      name: Захист носіїв інформації
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:49
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:mp
+      ref_id: '49'
+      name: Зберігання носіїв інформації
+      description: Фізично контролювати та безпечно зберігати носії інформації, що містять відкриту та конфіденційну
+        інформацію.
+      annotation: MP-4
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:50
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:mp
+      ref_id: '50'
+      name: Доступ до носіїв інформації
+      description: Обмежити доступ до конфіденційної інформації на носіях інформації.
+      annotation: 'MP-2. Мінімальні параметри: усі типи цифрових та/або нецифрових носіїв, що містять інформацію,
+        не дозволену для публічного оприлюднення'
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:51
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:mp
+      ref_id: '51'
+      name: Знищення інформації на носіях інформації
+      description: Очистити носії інформації, що містять відкриту та конфіденційну інформацію, перед утилізацією,
+        випуском з-під контролю організації або повторним використанням.
+      annotation: MP-6
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:52
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:mp
+      ref_id: '52'
+      name: Маркування носіїв інформації
+      description: Маркувати носії інформації, що містять відкриту та конфіденційну інформацію, для позначення обмежень
+        щодо розповсюдження, застережень стосовно поводження з ними та позначок безпеки.
+      annotation: MP-3
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:53
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:mp
+      ref_id: '53'
+      name: Транспортування носіїв інформації
+      description: Захистити і контролювати носії інформації, що містять відкриту та конфіденційну інформацію, під
+        час транспортування за межі контрольованих територій; вести облік носіїв інформації, що містять відкриту
+        та конфіденційну інформацію, під час транспортування за межі контрольованих територій. Документувати дії,
+        пов'язані з транспортуванням системних носіїв, які містять відкриту та конфіденційну інформацію.
+      annotation: MP-5, SC-28
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:54
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:mp
+      ref_id: '54'
+      name: Використання носіїв інформації
+      description: Обмежити або заборонити використання типів носіїв інформації, визначених організацією; заборонити
+        використання знімних носіїв інформації без ідентифікованого власника.
+      annotation: MP-7
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:55
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:mp
+      ref_id: '55'
+      name: Резервне копіювання
+      description: Захистити конфіденційність резервної копії.
+      annotation: 'CP-9. Мінімальні параметри: a. щонайменше щотижня або як визначено в плані дій у надзвичайних
+        ситуаціях (за наявності); b. щонайменше щотижня або як визначено в плані дій у надзвичайних ситуаціях (за
+        наявності); c. при створенні, отриманні, оновленні або як визначено в плані дій у надзвичайних ситуаціях
+        (за наявності)'
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ps
+      assessable: false
+      depth: 1
+      ref_id: PS
+      name: Кадрова безпека
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:56
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ps
+      ref_id: '56'
+      name: Перевірка персоналу
+      description: Перевіряти осіб перед тим, як надавати їм доступ до системи; проводити повторні перевірки осіб
+        відповідно до умов, що потребують повторної перевірки, визначених організацією.
+      annotation: PS-3
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:57
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ps
+      ref_id: '57'
+      name: Звільнення персоналу. Переведення персоналу
+      description: '1) Коли припиняється індивідуальна трудова діяльність: заборонити доступ до системи протягом
+        визначеного організацією періоду часу; припинити дію або відкликати автентифікатори та облікові записи,
+        пов''язані з особою; відновити властивості системи, пов''язані з безпекою; 2) коли працівників призначають
+        або переводять на інші посади в організації: переглянути та підтвердити поточну оперативну потребу в поточних
+        логічних і фізичних дозволах доступу до системи та об''єкта; ініціювати дії з переведення або призначення,
+        визначені організацією, протягом визначеного організацією періоду часу після дії з переведення або призначення;
+        змінювати авторизацію доступу відповідно до будь-яких змін в оперативних потребах.'
+      annotation: 'PS-4, PS-5. Мінімальні параметри: a. у разі добровільного звільнення - якомога швидше, але не
+        більше ніж за 5 робочих днів; у разі примусового звільнення - у той самий день, що й припинення трудових
+        відносин; b. 1-ий параметр: дії з перепризначення, щоб забезпечити видалення або вимкнення всіх системних
+        доступів, які більше не потрібні'
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:pe
+      assessable: false
+      depth: 1
+      ref_id: PE
+      name: Фізичний захист і захист робочого середовища
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:58
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:pe
+      ref_id: '58'
+      name: Авторизація фізичного доступу
+      description: Розробити, затвердити та підтримувати список осіб, які мають право доступу до фізичного місця
+        розташування системи; надавати повноваження для доступу до об'єкта; періодично перевіряти список фізичного
+        доступу; переглядати список доступу до об'єктів з визначеною організацією частотою. Видаляти осіб зі списку
+        фізичного доступу, коли доступ більше не потрібен.
+      annotation: 'PE-2. Мінімальні параметри: c. щонайменше щороку'
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:59
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:pe
+      ref_id: '59'
+      name: Моніторинг фізичного доступу
+      description: Моніторити фізичний доступ до місця розташування системи, щоб виявляти та реагувати на інциденти
+        фізичної безпеки; переглядати журнали фізичного доступу з визначеною організацією частотою та при виникненні
+        визначених організацією подій, або потенційних ознак подій.
+      annotation: 'PE-6. Мінімальні параметри: b. 1-ий параметр: щонайменше кожні 90 днів'
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:60
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:pe
+      ref_id: '60'
+      name: Альтернативне робоче місце
+      description: Визначити альтернативні робочі місця, дозволені для використання працівниками; застосовувати
+        дії безпеки на альтернативних робочих місцях, визначені організацією.
+      annotation: PE-17
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:61
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:pe
+      ref_id: '61'
+      name: Керування фізичним доступом
+      description: '1) Контролювати фізичний доступ до місця, де знаходиться система: перевіряти індивідуальні фізичні
+        дозволи на доступ перед наданням доступу; контролювати вхід і вихід за допомогою систем/пристроїв фізичного
+        контролю доступу або охоронців; 2) вести журнали контролю фізичного доступу для точок входу та виходу; 3)
+        супроводжувати відвідувачів і контролювати їхню діяльність; 4) забезпечити захист ключів, кодів доступу
+        та інших пристроїв фізичного доступу; 5) контролювати фізичний доступ до пристроїв виводу, щоб запобігти
+        доступу сторонніх осіб до конфіденційної інформації.'
+      annotation: PE-3, PE-5
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:62
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:pe
+      ref_id: '62'
+      name: Контроль доступу до джерел і ліній електроживлення. Контроль доступу до пристроїв виведення інформації
+      description: Контролювати фізичний доступ до розподільчих ліній системи і ліній електропередач на об'єктах
+        організації.
+      annotation: PE-4
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ra
+      assessable: false
+      depth: 1
+      ref_id: RA
+      name: Оцінювання ризику
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:63
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ra
+      ref_id: '63'
+      name: Оцінювання ризику
+      description: Оцінити ризик несанкціонованого розголошення в результаті обробки, зберігання або передачі конфіденційної
+        інформації.
+      annotation: 'RA-3. Мінімальні параметри: d., f. щонайменше щороку'
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:64
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ra
+      ref_id: '64'
+      name: Сканування вразливостей
+      description: Моніторити та сканувати систему на наявність вразливостей з визначеною організацією частотою
+        та при виявленні нових вразливостей, що впливають на систему. Усунути вразливості системи протягом визначеного
+        організацією часу на реагування.
+      annotation: 'RA-5. Мінімальні параметри: a. щонайменше кожні 30 днів'
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ca
+      assessable: false
+      depth: 1
+      ref_id: CA
+      name: Оцінювання, акредитація та моніторинг безпеки
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:65
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ca
+      ref_id: '65'
+      name: Оцінювання
+      description: Оцінювати дії до безпеки системи та середовища її функціонування з визначеною організацією частотою,
+        щоб визначити, чи були ці дії виконані.
+      annotation: 'CA-2. Мінімальні параметри: d. щонайменше щороку'
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:66
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ca
+      ref_id: '66'
+      name: План усунення недоліків та контрольні показники
+      description: '1) Розробити план дій і контрольні показники для системи: задокументувати заплановані заходи
+        з виправлення слабких місць або недоліків, виявлених під час оцінювання безпеки; зменшити або усунути відомі
+        недоліки системи; 2) Оновити існуючий план дій і показників на основі результатів оцінки безпеки, незалежних
+        аудитів або оглядів, а також безперервного моніторингу.'
+      annotation: CA-5
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:67
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ca
+      ref_id: '67'
+      name: Безперервний моніторинг
+      description: Розробити та впровадити стратегію безперервного моніторингу на рівні системи, що передбачає постійний
+        моніторинг та оцінку безпеки.
+      annotation: CA-7
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:68
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:ca
+      ref_id: '68'
+      name: Взаємодія систем
+      description: 'Затверджувати та керувати обміном конфіденційною інформацією між системою та іншими системами,
+        використовуючи (вибір один або декілька): угоди про безпеку з''єднання; угоди про безпеку обміну інформацією;
+        меморандуми або угоди про взаєморозуміння; угоди про рівень обслуговування; угоди з користувачами; угоди
+        про нерозголошення інформації; документувати характеристики інтерфейсу, дії до безпеки та обов''язки для
+        кожної системи як частину договорів про обмін; переглядати та оновлювати з визначеною організацією частотою
+        договори про обмін.'
+      annotation: CA-3
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:sc
+      assessable: false
+      depth: 1
+      ref_id: SC
+      name: Захист інформаційної системи та комунікацій
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:69
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:sc
+      ref_id: '69'
+      name: Захист периметра
+      description: Контролювати та управляти зв'язком на зовнішньому периметрі системи та на ключових внутрішніх
+        периметрах всередині системи; реалізувати підмережі для загальнодоступних компонентів системи, які фізично
+        або логічно відділені від внутрішніх мереж; підключатися до зовнішніх мереж тільки через керовані інтерфейси,
+        що складаються з пристроїв захисту периметра, розташованих відповідно до архітектури безпеки організації.
+      annotation: SC-7
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:70
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:sc
+      ref_id: '70'
+      name: Інформація в загальних ресурсах системи
+      description: Запобігати несанкціонованій і ненавмисній передачі інформації за допомогою загальних ресурсів
+        системи.
+      annotation: SC-4
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:71
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:sc
+      ref_id: '71'
+      name: Захист периметра - Відмова за замовчуванням - Дозвіл за винятком
+      description: Заборонити трафік мережевих комунікацій за замовчуванням і дозволити трафік мережевих комунікацій
+        за винятком.
+      annotation: SC-7(5)
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:72
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:sc
+      ref_id: '72'
+      name: Конфіденційність і цілісність передачі. Захист інформації у стані спокою
+      description: Реалізувати механізми криптографічного захисту для запобігання несанкціонованому розкриттю конфіденційної
+        інформації під час передачі та зберігання.
+      annotation: 'SC-8, SC-8(1), SC-28, SC-28(1). Мінімальні параметри: SC-8(1) — запобігати несанкціонованому
+        розголошенню інформації та виявляти зміни в ній; SC-28 — 1-ий параметр: конфіденційність та цілісність,
+        2-ий параметр: вся інформація; SC-28(1) — 1-ий параметр: вся інформація, 2-ий параметр: всі компоненти системи
+        та носії інформації'
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:73
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:sc
+      ref_id: '73'
+      name: Відключення мережі
+      description: Завершити з'єднання з мережею, яке пов'язане із сеансом зв'язку в кінці сеансу або після періоду
+        бездіяльності.
+      annotation: 'SC-10. Мінімальні параметри: не більше 15 хвилин'
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:74
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:sc
+      ref_id: '74'
+      name: Встановлення та управління криптографічними ключами
+      description: Встановити криптографічні ключі в системі та керувати ними відповідно до визначених організацією
+        дій до встановлення та управління ключами.
+      annotation: SC-12
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:75
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:sc
+      ref_id: '75'
+      name: Криптографічний захист
+      description: Впровадити типи криптографічного захисту при використанні системи для захисту конфіденційності
+        відкритої та конфіденційної інформації, визначені організацією.
+      annotation: SC-13
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:76
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:sc
+      ref_id: '76'
+      name: Спільні обчислювальні пристрої та застосунки
+      description: Заборонити віддалену активацію спільних обчислювальних пристроїв і програмного забезпечення з
+        визначеними організацією винятками, коли дозволяється віддалена активація; надавати чіткі вказівки щодо
+        використання користувачам, які фізично наявні біля пристроїв.
+      annotation: 'SC-15. Мінімальні параметри: спеціальні апартаменти ВТЦ, розташовані в затверджених місцях'
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:77
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:sc
+      ref_id: '77'
+      name: Мобільний код
+      description: Визначити прийнятний мобільний код і технології мобільного коду; авторизувати, відстежувати та
+        контролювати використання мобільного коду.
+      annotation: SC-18
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:78
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:sc
+      ref_id: '78'
+      name: Автентифікація сесії
+      description: Захистити автентифікацію сеансів зв'язку.
+      annotation: SC-23
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:si
+      assessable: false
+      depth: 1
+      ref_id: SI
+      name: Цілісність системи та інформації
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:79
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:si
+      ref_id: '79'
+      name: Виправлення дефектів
+      description: Виявляти, повідомляти та виправляти недоліки системи; встановлювати оновлення програмного забезпечення
+        та вбудованих програм, що стосуються безпеки, протягом визначеного організацією періоду часу після виходу
+        оновлень.
+      annotation: 'SI-2. Мінімальні параметри: c. 30 діб'
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:80
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:si
+      ref_id: '80'
+      name: Захист від шкідливого коду
+      description: '1) Упровадити механізми захисту від шкідливого коду у визначених місцях системи для виявлення
+        та знищення шкідливого коду; 2) оновлювати механізми захисту від шкідливого коду в міру виходу нових версій
+        відповідно до політики та процедур управління конфігурацією; 3) налаштувати механізми захисту від шкідливого
+        коду на: виконання сканування системи з визначеною організацією частотою та сканування файлів із зовнішніх
+        джерел у реальному часі на кінцевих точках та точках входу і виходу з мережі під час завантаження, відкриття
+        або виконання файлів; блокування шкідливого коду, поміщення шкідливого коду в карантин або інші дії у відповідь
+        на виявлення шкідливого коду.'
+      annotation: 'SI-3. Мінімальні параметри: c.1. 1-ий параметр: щонайменше щотижня, 2-ий параметр: кінцеві точки
+        та точки входу/виходу з мережі; c.2. 1-ий параметр: блокування та карантин шкідливого коду, 2-ий параметр:
+        щонайменше відповідальний адміністратор'
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:81
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:si
+      ref_id: '81'
+      name: Попередження, рекомендації та директиви з безпеки
+      description: Отримувати попередження, рекомендації та директиви щодо безпеки системи від зовнішніх організацій
+        на постійній основі; створювати та розповсюджувати внутрішні попередження системи, рекомендації та директиви
+        щодо безпеки в разі потреби; упроваджувати директиви з безпеки відповідно до встановлених часових рамок.
+      annotation: SI-5
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:82
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:si
+      ref_id: '82'
+      name: Моніторинг системи
+      description: '1) Проводити моніторинг системи для виявлення: атак та індикаторів потенційних атак; неавторизованих
+        підключень; 2) виявляти неавторизоване використання системи; 3) проводити моніторинг вхідного та вихідного
+        комунікаційного трафіка для виявлення незвичних або несанкціонованих дій чи умов.'
+      annotation: 'SI-4, SI-4(4). Мінімальні параметри: b. безперервно'
+      implementation_groups:
+      - VK
+      - DSK
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:pl
+      assessable: false
+      depth: 1
+      ref_id: PL
+      name: Планування безпеки
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:83
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:pl
+      ref_id: '83'
+      name: Політика та процедури планування безпеки
+      description: Розробити, задокументувати та розповсюдити серед персоналу організації або ролей політики та
+        процедури, необхідні для виконання дій безпеки; періодично переглядати та оновлювати політики та процедури
+        з визначеною організацією частотою.
+      annotation: 'AC-1, AT-1, AU-1, CA-1, CM-1, IA-1, IR-1, MA-1, MP-1, PE-1, PL-1, PS-1, RA-1, SA-1, SC-1, SI-1,
+        SR-1. Мінімальні параметри: с.1, с.2 — щонайменше щороку (для AT-1, AU-1 також: a. весь персонал); SR-1
+        a. як мінімум ключовий персонал з питань кібербезпеки або уповноважену особу'
+      implementation_groups:
+      - VK
+      - DSK
+      questions:
+        urn:intuitem:risk:req_node:dsszzi-base-security-profile:83:question:1:
+          type: text
+          text: 'AC-1 — Призначення: серед визначеного організацією персоналу або ролей — вкажіть значення'
+        urn:intuitem:risk:req_node:dsszzi-base-security-profile:83:question:2:
+          type: multiple_choice
+          text: 'AC-1 — Вибір (один або декілька): оберіть значення'
+          choices:
+          - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:83:question:2:choice:1
+            value: Рівень організації
+          - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:83:question:2:choice:2
+            value: Рівень місії/бізнес-процесу
+          - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:83:question:2:choice:3
+            value: рівень системи
+        urn:intuitem:risk:req_node:dsszzi-base-security-profile:83:question:3:
+          type: text
+          text: 'AC-1 — Призначення: визначену організацією посадову особу — вкажіть значення'
+        urn:intuitem:risk:req_node:dsszzi-base-security-profile:83:question:4:
+          type: text
+          text: 'AC-1 — Призначення: з визначеною організацією частотою — вкажіть значення'
+        urn:intuitem:risk:req_node:dsszzi-base-security-profile:83:question:5:
+          type: text
+          text: 'AC-1 — Призначення: події, визначені організацією — вкажіть значення'
+    - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:84
+      assessable: true
+      depth: 2
+      parent_urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:pl
+      ref_id: '84'
+      name: Плани захисту інформації та персональних даних
+      description: '1) Розробити план захисту інформації, який: визначає складові компоненти системи; описує робоче
+        середовище системи; описує конкретні загрози для системи, які викликають занепокоєння в організації; надає
+        огляд дій до безпеки системи; визначає з''єднання з іншими системами; визначає осіб, які виконують ролі
+        та обов''язки в системі; містить іншу інформацію, необхідну для захисту відкритої та конфіденційної інформації;
+        2) періодично переглядати та оновлювати план захисту інформації з визначеною організацією частотою; 3) захистити
+        план захисту інформації від неавторизованого розголошення.'
+      annotation: 'PL-2. Мінімальні параметри: a.14. щонайменше, призначена особа або персонал з кібербезпеки; b.
+        щонайменше, призначена особа або персонал з кібербезпеки; c. щонайменше щороку'
+      implementation_groups:
+      - VK
+      - DSK
