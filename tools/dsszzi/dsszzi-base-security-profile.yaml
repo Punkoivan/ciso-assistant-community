@@ -13,10 +13,12 @@ description: 'Базовий профіль безпеки системи на �
 
   через implementation groups.'
 copyright: Адміністрація Державної служби спеціального зв'язку та захисту інформації України
-version: 2
+version: 3
 publication_date: '2026-07-10'
 provider: ДССЗЗІ
 packager: ciso-assistant-ua
+dependencies:
+- urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls
 objects:
   framework:
     urn: urn:intuitem:risk:framework:dsszzi-base-security-profile
@@ -81,6 +83,8 @@ objects:
           type: text
           text: 'AC-2(5) — Призначення: вичерпано визначений організацією періоду часу очікування або опис того,
             коли необхідно вийти із системи — вкажіть значення'
+      reference_controls:
+      - urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:ac-2
     - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:2
       assessable: true
       depth: 2
@@ -93,6 +97,8 @@ objects:
       implementation_groups:
       - VK
       - DSK
+      reference_controls:
+      - urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:ac-3
     - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:3
       assessable: true
       depth: 2
@@ -110,6 +116,8 @@ objects:
           type: text
           text: 'AC-4 — Призначення: визначеними організацією політиками управління інформаційним потоком — вкажіть
             значення'
+      reference_controls:
+      - urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:ac-4
     - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:4
       assessable: true
       depth: 2
@@ -126,6 +134,8 @@ objects:
         urn:intuitem:risk:req_node:dsszzi-base-security-profile:4:question:1:
           type: text
           text: 'AC-5 — Призначення: визначені організацією обов’язки окремих осіб — вкажіть значення'
+      reference_controls:
+      - urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:ac-5
     - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:5
       assessable: true
       depth: 2
@@ -151,6 +161,9 @@ objects:
           type: text
           text: 'AC-6(1) — Призначення: визначена організацією інформація, необхідна для забезпечення безпеки —
             вкажіть значення'
+      reference_controls:
+      - urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:ac-6
+      - urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:au-9
     - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:6
       assessable: true
       depth: 2
@@ -172,6 +185,8 @@ objects:
         urn:intuitem:risk:req_node:dsszzi-base-security-profile:6:question:2:
           type: text
           text: 'AC-6(5) — Призначення: визначеним організацією персоналом або ролями — вкажіть значення'
+      reference_controls:
+      - urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:ac-6
     - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:7
       assessable: true
       depth: 2
@@ -183,6 +198,8 @@ objects:
       implementation_groups:
       - VK
       - DSK
+      reference_controls:
+      - urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:ac-6
     - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:8
       assessable: true
       depth: 2
@@ -218,6 +235,8 @@ objects:
               затримки]'
           - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:8:question:3:choice:4
             value: 'виконати [Призначення: визначені організацією дії]'
+      reference_controls:
+      - urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:ac-7
     - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:9
       assessable: true
       depth: 2
@@ -239,6 +258,8 @@ objects:
         urn:intuitem:risk:req_node:dsszzi-base-security-profile:9:question:2:
           type: text
           text: 'AC-8 — Призначення: визначені організацією умови — вкажіть значення'
+      reference_controls:
+      - urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:ac-8
     - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:10
       assessable: true
       depth: 2
@@ -259,6 +280,8 @@ objects:
         urn:intuitem:risk:req_node:dsszzi-base-security-profile:10:question:1:
           type: text
           text: 'AC-11 — Призначення: визначеного організацією періоду — вкажіть значення'
+      reference_controls:
+      - urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:ac-11
     - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:11
       assessable: true
       depth: 2
@@ -276,6 +299,8 @@ objects:
           type: text
           text: 'AC-12 — Призначення: визначених організацією умов або тригерних подій, що вимагають припинення
             сеансу — вкажіть значення'
+      reference_controls:
+      - urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:ac-12
     - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:12
       assessable: true
       depth: 2
@@ -295,6 +320,8 @@ objects:
         urn:intuitem:risk:req_node:dsszzi-base-security-profile:12:question:1:
           type: text
           text: 'AC-17(4) — Призначення: визначених організацією потреб — вкажіть значення'
+      reference_controls:
+      - urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:ac-17
     - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:13
       assessable: true
       depth: 2
@@ -307,6 +334,8 @@ objects:
       implementation_groups:
       - VK
       - DSK
+      reference_controls:
+      - urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:ac-18
     - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:14
       assessable: true
       depth: 2
@@ -333,6 +362,8 @@ objects:
         urn:intuitem:risk:req_node:dsszzi-base-security-profile:14:question:2:
           type: text
           text: 'AC-19(5) — Призначення: визначених організацією мобільних пристроях — вкажіть значення'
+      reference_controls:
+      - urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:ac-19
     - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:15
       assessable: true
       depth: 2
@@ -367,6 +398,8 @@ objects:
         urn:intuitem:risk:req_node:dsszzi-base-security-profile:15:question:3:
           type: text
           text: 'AC-20(2) — Призначення: обмеження, визначені організацією — вкажіть значення'
+      reference_controls:
+      - urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:ac-20
     - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:16
       assessable: true
       depth: 2
@@ -384,6 +417,8 @@ objects:
         urn:intuitem:risk:req_node:dsszzi-base-security-profile:16:question:1:
           type: text
           text: 'AC-22 — Призначення: визначеною організацією частотою — вкажіть значення'
+      reference_controls:
+      - urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:ac-22
     - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:at
       assessable: false
       depth: 1
@@ -404,6 +439,8 @@ objects:
       implementation_groups:
       - VK
       - DSK
+      reference_controls:
+      - urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:at-2
     - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:18
       assessable: true
       depth: 2
@@ -419,6 +456,8 @@ objects:
       implementation_groups:
       - VK
       - DSK
+      reference_controls:
+      - urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:at-3
     - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:au
       assessable: false
       depth: 1
@@ -436,6 +475,8 @@ objects:
       implementation_groups:
       - VK
       - DSK
+      reference_controls:
+      - urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:au-2
     - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:20
       assessable: true
       depth: 2
@@ -449,6 +490,8 @@ objects:
       implementation_groups:
       - VK
       - DSK
+      reference_controls:
+      - urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:au-3
     - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:21
       assessable: true
       depth: 2
@@ -461,6 +504,9 @@ objects:
       implementation_groups:
       - VK
       - DSK
+      reference_controls:
+      - urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:au-11
+      - urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:au-12
     - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:22
       assessable: true
       depth: 2
@@ -473,6 +519,8 @@ objects:
       implementation_groups:
       - VK
       - DSK
+      reference_controls:
+      - urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:au-5
     - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:23
       assessable: true
       depth: 2
@@ -487,6 +535,8 @@ objects:
       implementation_groups:
       - VK
       - DSK
+      reference_controls:
+      - urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:au-6
     - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:24
       assessable: true
       depth: 2
@@ -500,6 +550,8 @@ objects:
       implementation_groups:
       - VK
       - DSK
+      reference_controls:
+      - urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:au-7
     - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:25
       assessable: true
       depth: 2
@@ -514,6 +566,8 @@ objects:
       implementation_groups:
       - VK
       - DSK
+      reference_controls:
+      - urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:au-8
     - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:26
       assessable: true
       depth: 2
@@ -527,6 +581,8 @@ objects:
       implementation_groups:
       - VK
       - DSK
+      reference_controls:
+      - urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:au-9
     - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:cm
       assessable: false
       depth: 1
@@ -1096,6 +1152,8 @@ objects:
       implementation_groups:
       - VK
       - DSK
+      reference_controls:
+      - urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:ca-2
     - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:66
       assessable: true
       depth: 2
@@ -1110,6 +1168,8 @@ objects:
       implementation_groups:
       - VK
       - DSK
+      reference_controls:
+      - urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:ca-5
     - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:67
       assessable: true
       depth: 2
@@ -1122,6 +1182,8 @@ objects:
       implementation_groups:
       - VK
       - DSK
+      reference_controls:
+      - urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:ca-7
     - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:68
       assessable: true
       depth: 2
@@ -1138,6 +1200,8 @@ objects:
       implementation_groups:
       - VK
       - DSK
+      reference_controls:
+      - urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:ca-3
     - urn: urn:intuitem:risk:req_node:dsszzi-base-security-profile:sc
       assessable: false
       depth: 1
