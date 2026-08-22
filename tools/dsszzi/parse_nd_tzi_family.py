@@ -219,8 +219,16 @@ def parse_family(full_text: str, family: str) -> list[dict]:
                 if title.upper() == title and re.search(r"[А-ЯЄІЇҐA-Z]", title):
                     ems.append(m)
                 continue
-            after = enh_body[m.end():].lstrip("\n")
-            nxt = after.split("\n", 1)[0].strip()
+            # a page break can drop a lone page number between the "(N)"
+            # marker and its name line (e.g. "(8)\n174\n\nNAME...");
+            # skip such page-number-only lines before giving up
+            after_lines = enh_body[m.end():].split("\n")
+            idx = 0
+            while idx < len(after_lines) and (
+                not after_lines[idx].strip() or PAGE_RE.match(after_lines[idx].strip())
+            ):
+                idx += 1
+            nxt = after_lines[idx].strip() if idx < len(after_lines) else ""
             if nxt and nxt.upper() == nxt and re.search(r"[А-ЯЄІЇҐA-Z]", nxt):
                 ems.append(m)
         for k, m in enumerate(ems):
@@ -232,14 +240,15 @@ def parse_family(full_text: str, family: str) -> list[dict]:
             chunk_lines = chunk.split("\n")
             while chunk_lines:
                 ln = chunk_lines[0].strip()
-                if not ln:
-                    # skip blanks between the "(N)" marker and its CAPS name,
-                    # but a blank after the name ends it
+                if not ln or PAGE_RE.match(ln):
+                    # skip blanks and page-break page numbers between the
+                    # "(N)" marker and its CAPS name, but one of those
+                    # after the name has started ends it
                     if e_name_lines:
                         break
                     chunk_lines.pop(0)
                     continue
-                if ln.upper() == ln and not PAGE_RE.match(ln) and not (
+                if ln.upper() == ln and not (
                     ln.startswith("[Вилучено")
                 ):
                     e_name_lines.append(ln)
