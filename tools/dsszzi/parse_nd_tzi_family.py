@@ -143,19 +143,28 @@ def parse_family(full_text: str, family: str) -> list[dict]:
     # pdftotext marks page breaks with form feeds glued to the next line;
     # with -layout every line also carries positional indentation — drop both
     lines = [ln.lstrip("\x0c").strip() for ln in full_text.split("\n")]
-    # real section headers are followed by a control header within a few lines;
-    # this drops table-of-contents entries which match the same pattern
-    # the ref may stand alone on its line, with the control name wrapping
-    # to the next line (seen from the IA section onward)
+    # A section header is always "10.N Клас заходів захисту <CODE>", but some
+    # PDF pages have their columns interleaved by pdftotext, scattering the
+    # rest of the line ("захисту", the code, the title words) across many
+    # following short lines (seen with CA, PT). "10.N Клас заходів" itself
+    # is always intact on one line, so anchor on that and reconstruct the
+    # header by joining a window of lines after it — "захисту" is reliably
+    # followed by the family code even when scrambled.
+    # The ref may stand alone on its line, with the control name wrapping
+    # to the next line (seen from the IA section onward).
     any_ctrl_re = re.compile(r"^[A-ZА-ЯЄІЇҐ]{2}-\d+(\s|$)")
+    anchor_re = re.compile(r"^10\.\d+\s+Клас\s+заходів")
+    header_re = re.compile(r"Клас\s+заходів\s+захисту\s+(\S+)")
+    WINDOW = 25
+    anchors = [i for i, ln in enumerate(lines) if anchor_re.match(ln)]
     starts = [
-        i for i, ln in enumerate(lines)
-        if re.match(r"^10\.\d+\s+Клас\s+заходів\s+захисту", ln)
-        and any(any_ctrl_re.match(lines[j]) for j in range(i + 1, min(i + 8, len(lines))))
+        i for i in anchors
+        if any(any_ctrl_re.match(lines[j]) for j in range(i + 1, min(i + WINDOW, len(lines))))
     ]
     section = None
     for idx, i in enumerate(starts):
-        m = re.match(r"^10\.\d+\s+Клас\s+заходів\s+захисту\s+(\S+)", lines[i])
+        joined = " ".join(ln for ln in lines[i : i + WINDOW] if ln)
+        m = header_re.search(joined)
         if m and latinize(m.group(1).upper()) == family:
             end = starts[idx + 1] if idx + 1 < len(starts) else len(lines)
             section = "\n".join(lines[i + 1 : end])
