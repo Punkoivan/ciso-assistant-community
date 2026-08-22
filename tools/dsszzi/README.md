@@ -16,7 +16,7 @@
 ## Файли
 
 - `nd-tzi-3-6-controls.yaml` — бібліотека каталогу заходів захисту (reference controls).
-  Родини: AC (147), AT (17), AU (69), CA (32), CM (66), CP (56), IA (70), IR (42), MA (30), MP (30), PE (59). URN: `urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls`.
+  Родини: AC (147), AT (17), AU (69), CA (32), CM (66), CP (56), IA (70), IR (42), MA (30), MP (30), PE (59), PL (17). URN: `urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls`.
 - `dsszzi-base-security-profile.yaml` — фреймворк базового профілю безпеки
   (99 вимог, implementation groups VK/DSK, questions для параметрів).
 - `parse_nd_tzi_family.py` — парсер родини заходів з текстового дампа PDF.
