@@ -204,7 +204,7 @@ def parse_family(full_text: str, family: str) -> list[dict]:
         enh_body = body[enh_split.end():] if enh_split else ""
 
         if "[Вилучено" in base_body.split("Заходи захисту")[0]:
-            entries.append(_entry(ref, base_name, "", ""))
+            entries.append(_entry(ref, base_name, withdrawal_note(base_body), ""))
         else:
             desc, annot = split_sections(base_body)
             entries.append(_entry(ref, base_name, desc, annot))
@@ -250,11 +250,30 @@ def parse_family(full_text: str, family: str) -> list[dict]:
             e_ref = f"{ref}({m.group(1)})"
             e_name = pretty_name(" ".join(e_name_lines))
             if "[Вилучено" in chunk[:200]:
-                entries.append(_entry(e_ref, e_name, "", ""))
+                entries.append(_entry(e_ref, e_name, withdrawal_note(chunk), ""))
             else:
                 desc, annot = split_sections(chunk)
                 entries.append(_entry(e_ref, e_name, desc, annot))
     return entries
+
+
+WITHDRAWAL_RE = re.compile(r"\[Вилучено:?\s*([^\]]*)\]", re.IGNORECASE)
+# a control ref mentioned inside the withdrawal note may itself use Cyrillic
+# lookalikes ("СР-4"); only normalize tokens shaped like a ref, not the
+# whole sentence — blanket latinize() would corrupt ordinary Cyrillic words
+REF_TOKEN_RE = re.compile(r"\b[A-ZА-ЯЄІЇҐ]{2,3}-\d+(?:\(\d+\))?\b")
+
+
+def withdrawal_note(text: str) -> str:
+    """Keep the withdrawal reason (e.g. "Включено до CP-4") instead of
+    discarding it — a bare empty stub looks indistinguishable from a
+    parser miss."""
+    m = WITHDRAWAL_RE.search(text)
+    if not m:
+        return ""
+    body = re.sub(r"\s+", " ", m.group(1)).strip()
+    body = REF_TOKEN_RE.sub(lambda r: latinize(r.group(0)), body)
+    return f"Вилучено: {body}." if body else "Вилучено."
 
 
 def _entry(ref: str, name: str, desc: str, annot: str) -> dict:

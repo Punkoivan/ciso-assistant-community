@@ -7,7 +7,7 @@ description: 'Каталог заходів захисту з НД ТЗІ 3.6-00
   містить родини: AC (Управління доступом), AT (Обізнаність та навчання), AU (Аудит та підзвітність), CA (Оцінювання,
   авторизація та моніторинг), CM (Управління конфігурацією). Видобуток з офіційного PDF — див. tools/dsszzi/README.md.'
 copyright: Адміністрація Державної служби спеціального зв'язку та захисту інформації України
-version: 6
+version: 7
 publication_date: '2026-07-14'
 provider: ДССЗЗІ
 packager: ciso-assistant-ua
@@ -1893,7 +1893,7 @@ objects:
     name: Нагляд та огляд — Управління доступом
     category: process
     csf_function: protect
-    description: ''
+    description: 'Вилучено: включено в AC-2 й AU-6.'
     annotation: null
   - urn: urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:ac-14
     ref_id: AC-14
@@ -1930,7 +1930,7 @@ objects:
     name: Автоматизоване маркування
     category: technical
     csf_function: protect
-    description: ''
+    description: 'Вилучено: включено до MP-3.'
     annotation: null
   - urn: urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:ac-16
     ref_id: AC-16
@@ -3150,6 +3150,7 @@ objects:
     name: Рольове навчання — Підозрілі зв’язки та аномальна поведінка системи
     category: process
     csf_function: protect
+    description: 'Вилучено: включено до AT-2(4).'
   - urn: urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:at-3.5
     ref_id: AT-3(5)
     name: Рольове навчання — Обробка персональних даних
@@ -3194,6 +3195,7 @@ objects:
     name: Контакти з групами безпеки та асоціаціями
     category: process
     csf_function: protect
+    description: 'Вилучено: Включено до PM-15.'
   - urn: urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:at-6
     ref_id: AT-6
     name: Відгуки про проведені навчання
@@ -3311,21 +3313,25 @@ objects:
     name: Події аудиту — Узагальнення записів про аудит з декількох джерел
     category: process
     csf_function: protect
+    description: 'Вилучено: Включено до AU-12.'
   - urn: urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:au-2.2
     ref_id: AU-2(2)
     name: Події аудиту — Вибір події аудиту за компонентами
     category: process
     csf_function: protect
+    description: 'Вилучено: Включено до AU-12.'
   - urn: urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:au-2.3
     ref_id: AU-2(3)
     name: Події аудиту — Перегляд та оновлення
     category: process
     csf_function: protect
+    description: 'Вилучено: Включено до AU-2.'
   - urn: urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:au-2.4
     ref_id: AU-2(4)
     name: Події аудиту — Привілейовані функції
     category: process
     csf_function: protect
+    description: 'Вилучено: Включено до AC-6(9).'
   - urn: urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:au-3
     ref_id: AU-3
     name: Зміст записів аудиту
@@ -3375,6 +3381,7 @@ objects:
     name: Зміст записів аудиту — Централізоване управління планованим змістом записів аудиту
     category: technical
     csf_function: protect
+    description: 'Вилучено: Включено до PL-9.'
   - urn: urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:au-3.3
     ref_id: AU-3(3)
     name: Зміст записів аудиту — Обмеження елементів персональних даних
@@ -3588,6 +3595,7 @@ objects:
     name: Огляд, аналіз і звітність аудиту — Автоматизовані сповіщення про порушення безпеки
     category: process
     csf_function: detect
+    description: 'Вилучено: Включено до SI-4.'
   - urn: urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:au-6.3
     ref_id: AU-6(3)
     name: Огляд, аналіз і звітність аудиту — Зіставляння сховищ аудиту
@@ -3690,6 +3698,7 @@ objects:
     name: Огляд, аналіз і звітність аудиту — Регулювання рівня аудиту
     category: process
     csf_function: detect
+    description: 'Вилучено: Включено до AU-6.'
   - urn: urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:au-7
     ref_id: AU-7
     name: Скорочення записів аудиту та формування звіту
@@ -3730,6 +3739,7 @@ objects:
     name: Скорочення записів аудиту та формування звіту — Автоматичне сортування та пошук
     category: technical
     csf_function: detect
+    description: 'Вилучено: Включено до AU-7(1).'
   - urn: urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:au-8
     ref_id: AU-8
     name: Позначка часу
@@ -3755,11 +3765,13 @@ objects:
     name: Позначка часу — Синхронізація з авторитетним джерелом часу
     category: technical
     csf_function: protect
+    description: 'Вилучено: Включено до SC-45(1).'
   - urn: urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:au-8.2
     ref_id: AU-8(2)
     name: Позначка часу — Вторинне авторитетне джерело часу
     category: technical
     csf_function: protect
+    description: 'Вилучено: Включено до SC-45(2).'
   - urn: urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:au-9
     ref_id: AU-9
     name: Захист інформації аудиту
@@ -3970,6 +3982,7 @@ objects:
     name: Неспростовність — Цифрові підписи
     category: technical
     csf_function: protect
+    description: 'Вилучено: Включено до SI-7.'
   - urn: urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:au-11
     ref_id: AU-11
     name: Збереження записів аудиту
@@ -4210,6 +4223,7 @@ objects:
     name: Аудит сесії — Захоплення та запис інформації
     category: technical
     csf_function: protect
+    description: 'Вилучено: Включено до AU-14.'
   - urn: urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:au-14.3
     ref_id: AU-14(3)
     name: Аудит сесії — Віддалений перегляд та прослуховування
@@ -4223,6 +4237,7 @@ objects:
     name: Альтернативна можливість аудиту
     category: technical
     csf_function: protect
+    description: 'Вилучено: Включено до AU-5(5).'
   - urn: urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:au-16
     ref_id: AU-16
     name: Міжорганізаційний аудит
@@ -4550,26 +4565,31 @@ objects:
     name: Взаємодія систем — Незахищені з'єднання системи
     category: process
     csf_function: identify
+    description: 'Вилучено: Включено до SC-7(25).'
   - urn: urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:ca-3.2
     ref_id: CA-3(2)
     name: Взаємодія систем — Захищені з'єднання системи
     category: process
     csf_function: identify
+    description: 'Вилучено: Включено до SC-7(26).'
   - urn: urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:ca-3.3
     ref_id: CA-3(3)
     name: Взаємодія систем — Несекретні з'єднання системи безпеки, що не є національними
     category: process
     csf_function: identify
+    description: 'Вилучено: Включено до SC-7(27).'
   - urn: urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:ca-3.4
     ref_id: CA-3(4)
     name: Взаємодія систем — Підключення до загальнодоступних мереж
     category: process
     csf_function: identify
+    description: 'Вилучено: Включено до SC-7(28).'
   - urn: urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:ca-3.5
     ref_id: CA-3(5)
     name: Взаємодія систем — Обмеження зв'язку із зовнішніми системами
     category: process
     csf_function: identify
+    description: 'Вилучено: Включено до SC-7(5).'
   - urn: urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:ca-3.6
     ref_id: CA-3(6)
     name: Взаємодія систем — Передача дозволів
@@ -4604,6 +4624,7 @@ objects:
     name: Сертифікація безпеки
     category: process
     csf_function: identify
+    description: 'Вилучено: Включено до CA-2.'
   - urn: urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:ca-5
     ref_id: CA-5
     name: План усунення недоліків та контрольні показники
@@ -4789,6 +4810,7 @@ objects:
     name: Безперервний моніторинг — Види оцінок
     category: process
     csf_function: detect
+    description: 'Вилучено: Включено до CA-2.'
   - urn: urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:ca-7.3
     ref_id: CA-7(3)
     name: Безперервний моніторинг — Аналіз тенденції
@@ -5055,6 +5077,7 @@ objects:
     name: Базова конфігурація — Перегляд та оновлення
     category: process
     csf_function: protect
+    description: 'Вилучено: Включено до CM-2.'
   - urn: urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:cm-2.2
     ref_id: CM-2(2)
     name: Базова конфігурація — Автоматизація точності та актуальності
@@ -5094,11 +5117,13 @@ objects:
     name: Базова конфігурація забезпечення
     category: process
     csf_function: protect
+    description: 'Вилучено: Включено до CM-7(4).'
   - urn: urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:cm-2.5
     ref_id: CM-2(5)
     name: Базова конфігурація — Авторизоване програмне забезпечення
     category: process
     csf_function: protect
+    description: 'Вилучено: Включено до CM-7(5).'
   - urn: urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:cm-2.6
     ref_id: CM-2(6)
     name: Базова конфігурація — Розробка та середовище тестування
@@ -5376,11 +5401,13 @@ objects:
     name: Обмеження доступу до зміни — Перегляд змін у системі
     category: process
     csf_function: protect
+    description: 'Вилучено: перенесено до CM-3(7).'
   - urn: urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:cm-5.3
     ref_id: CM-5(3)
     name: Обмеження доступу до зміни — Підписані компоненти
     category: process
     csf_function: protect
+    description: 'Вилучено: перенесено до CM-14.'
   - urn: urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:cm-5.4
     ref_id: CM-5(4)
     name: Обмеження доступу до зміни — Подвійна авторизація
@@ -5427,6 +5454,7 @@ objects:
     name: Обмеження доступу до зміни — Автоматичне впровадження заходів захисту
     category: process
     csf_function: protect
+    description: 'Вилучено: включено до SI-7.'
   - urn: urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:cm-6
     ref_id: CM-6
     name: Налаштування конфігурації
@@ -5511,11 +5539,13 @@ objects:
     name: Налаштування конфігурації — Виявлення неавторизованих змін
     category: technical
     csf_function: detect
+    description: 'Вилучено: Включено до SI-7.'
   - urn: urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:cm-6.4
     ref_id: CM-6(4)
     name: Налаштування конфігурації — Демонстрація відповідності
     category: technical
     csf_function: protect
+    description: 'Вилучено: Включено до CM-4.'
   - urn: urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:cm-7
     ref_id: CM-7
     name: Мінімально необхідна функціональність
@@ -5837,6 +5867,7 @@ objects:
     name: Інвентаризація компонентів системи дублювання компонентів обліку
     category: process
     csf_function: identify
+    description: 'Вилучено: перенесено до CM-8.'
   - urn: urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:cm-8.6
     ref_id: CM-8(6)
     name: Інвентаризація компонентів системи налаштування та затверджені відхилення
@@ -6009,6 +6040,7 @@ objects:
     name: Встановлене користувачем програмне забезпечення попередження про несанкціоновану інсталяцію
     category: process
     csf_function: protect
+    description: 'Вилучено: Включено до CM-8(3).'
   - urn: urn:intuitem:risk:library:dsszzi-nd-tzi-3-6-controls:cm-11.2
     ref_id: CM-11(2)
     name: Встановлене користувачем програмне забезпечення встановлення програмного забезпечення з привілейованим
