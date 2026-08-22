@@ -96,13 +96,58 @@ def split_sections(block: str) -> tuple[str, str]:
     return reflow(desc), reflow(annot)
 
 
+def _glue_standalone_refs(section: str, family_class: str) -> str:
+    """From the IA section onward the ref sometimes stands alone on its
+    line, with the (possibly multi-line, all-caps) control name wrapping
+    below it instead of following on the same line:
+
+        ІА-2
+
+        ІДЕНТИФІКАЦІЯ ТА АВТЕНТИФІКАЦІЯ (КОРИСТУВАЧІВ ОРГАНІЗАЦІЇ)
+        Заходи захисту:
+
+    Rejoin these onto a single "REF NAME" line so ctrl_re (which expects
+    the name on the same line, as in the AC..CP sections) can match them.
+    """
+    ref_alone_re = re.compile(rf"^{family_class}-\d+$")
+    lines = section.split("\n")
+    out: list[str] = []
+    i = 0
+    while i < len(lines):
+        ln = lines[i].strip()
+        if ref_alone_re.match(ln):
+            j = i + 1
+            name_lines: list[str] = []
+            while j < len(lines):
+                nxt = lines[j].strip()
+                if not nxt:
+                    if name_lines:
+                        break
+                    j += 1
+                    continue
+                if nxt.upper() == nxt and re.search(r"[А-ЯЄІЇҐA-Z]", nxt) and not nxt.startswith("Заходи"):
+                    name_lines.append(nxt)
+                    j += 1
+                else:
+                    break
+            if name_lines:
+                out.append(f"{ln} {' '.join(name_lines)}")
+                i = j
+                continue
+        out.append(lines[i])
+        i += 1
+    return "\n".join(out)
+
+
 def parse_family(full_text: str, family: str) -> list[dict]:
     # pdftotext marks page breaks with form feeds glued to the next line;
     # with -layout every line also carries positional indentation — drop both
     lines = [ln.lstrip("\x0c").strip() for ln in full_text.split("\n")]
     # real section headers are followed by a control header within a few lines;
     # this drops table-of-contents entries which match the same pattern
-    any_ctrl_re = re.compile(r"^[A-ZА-ЯЄІЇҐ]{2}-\d+\s")
+    # the ref may stand alone on its line, with the control name wrapping
+    # to the next line (seen from the IA section onward)
+    any_ctrl_re = re.compile(r"^[A-ZА-ЯЄІЇҐ]{2}-\d+(\s|$)")
     starts = [
         i for i, ln in enumerate(lines)
         if re.match(r"^10\.\d+\s+Клас\s+заходів\s+захисту", ln)
@@ -118,9 +163,16 @@ def parse_family(full_text: str, family: str) -> list[dict]:
     if section is None:
         raise SystemExit(f"family {family} section not found")
 
-    # split into base controls
+    # split into base controls; the ref itself may use Cyrillic lookalikes
+    # (e.g. "СР-1" for "CP-1"), so match either script per letter
+    cyr_for_latin = {l: c for c, l in zip("АВСЕІКМНОРТХУ", "ABCEIKMHOPTXY")}
+    family_class = "".join(
+        f"[{ch}{cyr_for_latin[ch]}]" if ch in cyr_for_latin else re.escape(ch)
+        for ch in family
+    )
+    section = _glue_standalone_refs(section, family_class)
     ctrl_re = re.compile(
-        rf"^({family}-\d+) +([А-ЯЄІЇҐA-Z].*)$", re.MULTILINE
+        rf"^({family_class}-\d+) *([А-ЯЄІЇҐA-Z].*)$", re.MULTILINE
     )
     matches = list(ctrl_re.finditer(section))
     controls = []
